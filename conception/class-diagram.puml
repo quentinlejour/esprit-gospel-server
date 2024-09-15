@@ -1,0 +1,43 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+' Classes
+abstract class AbstractEntity {
+    + Long id
+    + ZoneDateTime createdAt
+    + ZoneDateTime updatedAt
+}
+
+class Address {
+    + String internalAdditionalInfo
+    + String externalAdditionalInfo
+    + Integer streetNumber
+    + String streetName
+    + String zipCode
+    + String country
+}
+
+class Concert {
+    + ZoneDateTime date
+    + String description
+    + Address address
+}
+
+enum UserType {
+    + ADMIN
+    + SUPER_ADMIN
+    + REGULAR_USER
+}
+
+class User {
+    + UserType type
+    + String email
+    + String password
+    + boolean isDisabled
+}
+' Links
+AbstractEntity <|-- Concert
+AbstractEntity <|-- User
+Concert "1" *-- Address
+User --> UserType
+@enduml
