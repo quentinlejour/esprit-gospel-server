@@ -1,7 +1,9 @@
 package fr.espritgospel.server;
 
+import io.javalin.Javalin;
+
 public class Main {
   public static void main(String[] args) {
-    System.out.println("Hello Esprit Gospel!");
+    var app = Javalin.create().get("/", ctx -> ctx.result("Hello Esprit Gospel!\n")).start(8080);
   }
 }
