@@ -1,6 +1,5 @@
 package fr.espritgospel.server;
 
-import fr.espritgospel.server.domain.entity.Address;
 import io.javalin.Javalin;
 
 public class Main {
