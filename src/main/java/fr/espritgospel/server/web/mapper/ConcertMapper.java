@@ -19,7 +19,7 @@ public class ConcertMapper {
     return Concert.builder()
         .id(concertDTO.id())
         .date(concertDTO.date())
-        .address(concertDTO.address())
+        .address(AddressMapper.map(concertDTO.address()))
         .description(concertDTO.description())
         .build();
   }
@@ -33,6 +33,9 @@ public class ConcertMapper {
   @Nonnull
   public ConcertDTO map(@Nonnull Concert concert) {
     return new ConcertDTO(
-        concert.getId(), concert.getAddress(), concert.getDate(), concert.getDescription());
+        concert.getId(),
+        AddressMapper.map(concert.getAddress()),
+        concert.getDate(),
+        concert.getDescription());
   }
 }

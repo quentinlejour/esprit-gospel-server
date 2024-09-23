@@ -1,6 +1,13 @@
 package fr.espritgospel.server.web.dto;
 
-import fr.espritgospel.server.domain.entity.Address;
 import java.time.ZonedDateTime;
 
-public record ConcertDTO(Long id, Address address, ZonedDateTime date, String description) {}
+/**
+ * Representation of a concert as it exposed through the api.
+ *
+ * @param id id of the concert
+ * @param address address
+ * @param date date
+ * @param description description
+ */
+public record ConcertDTO(long id, AddressDTO address, ZonedDateTime date, String description) {}
