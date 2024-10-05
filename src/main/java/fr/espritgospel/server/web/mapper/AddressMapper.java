@@ -21,7 +21,7 @@ public class AddressMapper {
         .externalAdditionalInfo(addressDTO.externalAdditionalInfo())
         .streetNumber(addressDTO.streetNumber())
         .streetName(addressDTO.streetName())
-        .zipCode(addressDTO.country())
+        .zipCode(addressDTO.zipCode())
         .country(addressDTO.country())
         .build();
   }

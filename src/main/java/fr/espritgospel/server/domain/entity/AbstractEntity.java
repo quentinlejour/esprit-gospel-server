@@ -15,23 +15,23 @@ import org.hibernate.annotations.Immutable;
 import org.hibernate.annotations.UpdateTimestamp;
 
 @Data
-@RequiredArgsConstructor(access = AccessLevel.PRIVATE)
+@RequiredArgsConstructor(access = AccessLevel.PROTECTED)
 @SuperBuilder(toBuilder = true)
 @MappedSuperclass
 public abstract class AbstractEntity {
-  @Setter(AccessLevel.PRIVATE)
+  @Setter(AccessLevel.PROTECTED)
   @Id
   @GeneratedValue
   @Column(name = "id", unique = true, updatable = false, insertable = false)
   private long id;
 
-  @Setter(AccessLevel.PRIVATE)
+  @Setter(AccessLevel.PROTECTED)
   @CreationTimestamp
   @Immutable
   @Column(name = "created_at", updatable = false, insertable = false)
   private ZonedDateTime createdAt;
 
-  @Setter(AccessLevel.PRIVATE)
+  @Setter(AccessLevel.PROTECTED)
   @UpdateTimestamp
   @Column(name = "updated_at", updatable = false, insertable = false)
   private ZonedDateTime updatedAt;
